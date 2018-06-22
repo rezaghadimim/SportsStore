@@ -26,11 +26,17 @@
     <Folder Include="Views\Cart\" />
     <Folder Include="Views\Shared\Components\CartSummary\" />
     <Folder Include="Views\Order\" />
+    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />
+    <Compile Remove="Views\Order\Complated.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <Content Remove="Views\Order\Complated.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Order\Completed.cshtml" />
   </ItemGroup>
 </Project>
