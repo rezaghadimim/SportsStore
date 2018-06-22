@@ -1,10 +1,8 @@
-﻿using System;
+﻿using System.Linq;
 namespace SportsStore.Models
 {
-    public class IProductRepository
+    public interface IProductRepository
     {
-        public IProductRepository()
-        {
-        }
+        IQueryable<Product> Products { get; }
     }
 }

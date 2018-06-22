@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore", "SportsStore\SportsStore.csproj", "{AF0FE412-62A7-4812-92A4-DFDB8CAA89C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.Tests", "SportsStore.Tests\SportsStore.Tests.csproj", "{DFA111E3-F785-4DF7-9F70-06AFAA7AF69A}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C36F3982-EB46-4D30-9DCA-9AE4F7B903E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +17,13 @@ Global
 		{AF0FE412-62A7-4812-92A4-DFDB8CAA89C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF0FE412-62A7-4812-92A4-DFDB8CAA89C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF0FE412-62A7-4812-92A4-DFDB8CAA89C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFA111E3-F785-4DF7-9F70-06AFAA7AF69A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFA111E3-F785-4DF7-9F70-06AFAA7AF69A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFA111E3-F785-4DF7-9F70-06AFAA7AF69A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFA111E3-F785-4DF7-9F70-06AFAA7AF69A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C36F3982-EB46-4D30-9DCA-9AE4F7B903E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36F3982-EB46-4D30-9DCA-9AE4F7B903E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36F3982-EB46-4D30-9DCA-9AE4F7B903E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36F3982-EB46-4D30-9DCA-9AE4F7B903E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
