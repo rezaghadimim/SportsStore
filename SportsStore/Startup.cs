@@ -45,13 +45,13 @@ namespace SportsStore
 
 
 
-            services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/Login");
-            services.AddAuthentication()
-                .AddCookie(options =>
-                {
-                    options.LoginPath = "/Account/Login";
-                    options.LogoutPath = "/Account/Logout";
-                });
+            //services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/Login");
+            //services.AddAuthentication()
+                //.AddCookie(options =>
+                //{
+                //    options.LoginPath = "/Account/Login";
+                //    options.LogoutPath = "/Account/Logout";
+                //});
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -86,8 +86,8 @@ namespace SportsStore
                     name: null, 
                     template: "{controller}/{action}/{id?}");
             });
-            SeedData.EnsurePopulated(app);
-            IdentitySeedData.EnsurePopulated(app);
+            //SeedData.EnsurePopulated(app);
+            //IdentitySeedData.EnsurePopulated(app);
         }
     }
 }

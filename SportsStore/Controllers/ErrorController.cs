@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+
 namespace SportsStore.Controllers
 {
-    public class ErrorController
+    public class ErrorController : Controller
     {
-        public ErrorController()
-        {
-        }
+        public ViewResult Error() => View();
     }
 }

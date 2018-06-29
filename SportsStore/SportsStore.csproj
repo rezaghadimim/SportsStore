@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
-    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,10 +28,14 @@
     <Folder Include="Views\Order\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />
     <Compile Remove="Views\Order\Complated.cshtml" />
+    <Compile Remove="Migrations\AppIdentityDb\20180622224437_Initial.Designer.cs" />
+    <Compile Remove="Migrations\AppIdentityDb\20180622224437_Initial.cs" />
+    <Compile Remove="Migrations\AppIdentityDb\AppIdentityDbContextModelSnapshot.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\lib\jquery-validation\LICENSE.md" />

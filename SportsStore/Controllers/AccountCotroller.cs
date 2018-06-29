@@ -3,28 +3,33 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SportsStore.Models.ViewModels;
+using SportsStore.Models;
 
 namespace SportsStore.Controllers
 {
+
     [Authorize]
-    public class AccountCotroller : Controller
+    public class AccountController : Controller
     {
         private UserManager<IdentityUser> userManager;
         private SignInManager<IdentityUser> signInManager;
 
-        public AccountCotroller(UserManager<IdentityUser> userMgr,
-                                SignInManager<IdentityUser> signInMgr)
+        public AccountController(UserManager<IdentityUser> userMgr,
+                SignInManager<IdentityUser> signInMgr)
         {
             userManager = userMgr;
             signInManager = signInMgr;
+            IdentitySeedData.EnsurePopulated(userMgr).Wait();
         }
 
         [AllowAnonymous]
-        public ViewResult Login(string returnUrl) =>
-        View(new LoginModel
+        public ViewResult Login(string returnUrl)
         {
-            ReturnUrl = returnUrl
-        });
+            return View(new LoginModel
+            {
+                ReturnUrl = returnUrl
+            });
+        }
 
         [HttpPost]
         [AllowAnonymous]
@@ -33,13 +38,13 @@ namespace SportsStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityUser user = 
+                IdentityUser user =
                     await userManager.FindByNameAsync(loginModel.Name);
                 if (user != null)
                 {
                     await signInManager.SignOutAsync();
                     if ((await signInManager.PasswordSignInAsync(user,
-                         loginModel.Password, false, false)).Succeeded)
+                            loginModel.Password, false, false)).Succeeded)
                     {
                         return Redirect(loginModel?.ReturnUrl ?? "/Admin/Index");
                     }
