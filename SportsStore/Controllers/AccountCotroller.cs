@@ -23,13 +23,11 @@ namespace SportsStore.Controllers
         }
 
         [AllowAnonymous]
-        public ViewResult Login(string returnUrl)
+        public ViewResult Login(string returnUrl) =>
+        View(new LoginModel
         {
-            return View(new LoginModel
-            {
-                ReturnUrl = returnUrl
-            });
-        }
+            ReturnUrl = returnUrl
+        });
 
         [HttpPost]
         [AllowAnonymous]
@@ -38,19 +36,21 @@ namespace SportsStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityUser user =
+                IdentityUser user = 
                     await userManager.FindByNameAsync(loginModel.Name);
                 if (user != null)
                 {
                     await signInManager.SignOutAsync();
                     if ((await signInManager.PasswordSignInAsync(user,
-                            loginModel.Password, false, false)).Succeeded)
+                         loginModel.Password, false, false)).Succeeded)
                     {
                         return Redirect(loginModel?.ReturnUrl ?? "/Admin/Index");
                     }
                 }
             }
+
             ModelState.AddModelError("", "Invalid name or password");
+
             return View(loginModel);
         }
 
